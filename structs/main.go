@@ -10,6 +10,12 @@ type Person struct {
 	Email string `validate:"required,email"`
 }
 
+func validate(val interface{}) error {
+	v := reflect.ValueOf(val)
+	fmt.Println(v)
+	return nil
+}
+
 func main() {
 	fmt.Println("Structs in golang")
 	//no inheritance in golang; No super or parent
@@ -23,9 +29,8 @@ func main() {
 		Email: "royshourya30@proton.me",
 	}
 
-	t := reflect.TypeOf(rick)
-	fmt.Println("Name: ", t.Name())
-	fmt.Println("Kind: ", t.Kind())
+	fmt.Println(validate(rick))
+
 }
 
 type User struct {
