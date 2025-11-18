@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"learning_golang/package/average" // Use full module path instead of "./average"
+	"learning_golang/maps/package/average"
+	// "learning_golang/package/average" // Use full module path instead of "./average"
 )
 
 func main() {

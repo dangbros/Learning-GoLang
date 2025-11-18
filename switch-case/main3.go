@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func main3() {
 	today := time.Now()
 
 	switch today.Day() {
