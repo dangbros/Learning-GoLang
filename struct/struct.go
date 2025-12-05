@@ -5,12 +5,18 @@ import (
 	"time"
 )
 
+type customer struct {
+	name   string
+	number string
+}
+
 // this is how we created the struct
 type order struct {
 	id        string
 	amount    float32
 	status    string
 	createdAt time.Time
+	customer
 }
 
 // this is the constructor
@@ -35,13 +41,25 @@ func (o order) getAmount() float32 {
 }
 
 func main() {
-	//this is how we can create a struct and instantiate and assign values
-	language := struct {
-		name   string
-		isGood bool
-	}{"golang", true}
+	myOrder := order{
+		id:     "1",
+		amount: 20,
+		status: "processing",
+		customer: customer{
+			name:   "robin",
+			number: "123456789",
+		},
+	}
 
-	fmt.Println(language)
+	fmt.Println(myOrder)
+
+	//this is how we can create a struct and instantiate and assign values
+	// language := struct {
+	// 	name   string
+	// 	isGood bool
+	// }{"golang", true}
+
+	// fmt.Println(language)
 	// myOrder := newOrder("1", 50, "received")
 	// fmt.Println(myOrder.amount)
 
